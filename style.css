@@ -1,0 +1,58 @@
+html, body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    padding-left: 20px;
+    font-family: sans;
+}
+.main-container {
+    position: relative;
+    z-index: 0;
+    overflow-x: scroll;
+    display: inline-block;
+    width: 100%;
+}
+.container {
+    width: 940px;
+    text-align: center;
+}
+.schemat {
+    margin-left: 25px;
+    margin-right: 25px;
+    display: inline-block;
+    cursor: pointer;
+}
+.img-schemat {
+    height: 300px;
+}
+#overlay {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow: scroll;
+    text-align: center;
+}
+.visible {
+    display: block !important;
+}
+.pages {
+    display: none;
+    padding-top: 20px;
+}
+.page {
+    max-width: 80%;
+    margin-bottom: 16px;
+}
+

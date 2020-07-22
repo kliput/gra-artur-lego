@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lego City</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./index.js"></script>
+</head>
+
+<body>
+  <h1>Lego City</h1>
+  <div class="main-container">
+    <div class="container">
+      <div class="schemat" onclick="openSchemat(0);">
+        <img class="img-schemat" src="./assets/s1.jpg">
+      </div>
+      <div class="schemat" onclick="openSchemat(1);">
+        <img class="img-schemat" src="./assets/s2.jpg">
+      </div>
+    </div>
+  </div>
+
+  <div id="overlay" onclick="closeOverlay(event);">
+  </div>
+
+  <script>
+    main();
+  </script>
+</body>
+
+</html>
