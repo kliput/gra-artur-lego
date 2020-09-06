@@ -56,13 +56,17 @@ h1 {
     margin-bottom: 16px;
 }
 
-#man-buttons {
+.man-buttons {
     position: fixed;
     bottom: 10px;
     right: 10px;
     width: 150px;
     height: 150px;
     background-color: rgba(0, 0, 0, 0.1)
+}
+#man-buttons-2.man-buttons {
+    right: auto;
+    left: 10px;
 }
 .man-button {
     position: absolute;
@@ -87,30 +91,30 @@ h1 {
     border-radius: 100%;
     background-color: rgba(0, 0, 0, 0.2)
 }
-#man-button-up {
+.man-button-up {
     left: 50%;
     top: 10px;
     transform: translateX(-50%);
 }
-#man-button-right {
+.man-button-right {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
 }
-#man-button-left {
+.man-button-left {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
 }
-#man-button-down {
+.man-button-down {
     left: 50%;
     bottom: 10px;
     transform: translateX(-50%);
 }
-#man-person-container {
+.man-person-container {
     position: relative;
 }
-#man-person {
+.man-person {
     position: absolute;
     background-image: url('assets/man/man1.png');
     width: 206px;
@@ -118,5 +122,9 @@ h1 {
     background-position: center center;
     background-repeat: none;
 }
-
+.man-person.man2-person {
+    width: 171px;
+    height: 315px;
+    background-image: url('assets/man2/man2.png');
+}
 

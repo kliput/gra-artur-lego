@@ -45,5 +45,4 @@ function main() {
     addPages(0, 9);
     addPages(1, 11);
     addPages(2, 9);
-    addPages(3, 4);
 }

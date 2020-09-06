@@ -8,13 +8,14 @@ const lastTimes = {
 const movement = {};
 
 function main() {
-    const manPerson = document.getElementById('man-person');
+    const manPerson1 = document.querySelector('#man-person-container-1 .man-person');
+    const manPerson2 = document.querySelector('#man-person-container-2 .man-person');
 
     const movePx = 5;
     
     const moveInterval = 50;
 
-    function moveMan({ x = 0, y = 0 }) {
+    function moveMan(manPerson, { x = 0, y = 0 }) {
         manPerson.style.left = `${parseInt(manPerson.style.left || 0) + x}px`;
         manPerson.style.top = `${parseInt(manPerson.style.top || 0) + y}px`;
     }
@@ -26,34 +27,36 @@ function main() {
         left: { x: -movePx },
     };
 
-    function move(key) {
-        moveMan(implementation[key]);
+    function move(manPerson, key) {
+        moveMan(manPerson, implementation[key]);
     }
 
-    function moveStart(key) {
-        movement[key] = setInterval(() => move(key), moveInterval);
+    function moveStart(manPerson, key) {
+        movement[manPerson + key] = setInterval(() => move(manPerson, key), moveInterval);
     }
 
-    function moveEnd(key) {
-        clearInterval(movement[key]);
+    function moveEnd(manPerson, key) {
+        clearInterval(movement[manPerson + key]);
     }
 
-    for (const key in implementation) {
-        const button = document.getElementById(`man-button-${key}`);
-        button.addEventListener('mousedown', () => {
-            moveStart(key);
-        });
-        button.addEventListener('touchstart', () => {
-            moveStart(key);
-        });
-        button.addEventListener('mouseup', () => {
-            moveEnd(key);
-        });
-        button.addEventListener('touchend', () => {
-            moveEnd(key);
-        });
-        button.addEventListener('contextmenu', (event) => {
-            event.preventDefault();
-        });
-    }
+    [['man-buttons-1', manPerson1], ['man-buttons-2', manPerson2]].forEach(([id, manPerson]) => {
+        for (const key in implementation) {
+            const button = document.querySelector(`#${id} .man-button-${key}`);
+            button.addEventListener('mousedown', () => {
+                moveStart(manPerson, key);
+            });
+            button.addEventListener('touchstart', () => {
+                moveStart(manPerson, key);
+            });
+            button.addEventListener('mouseup', () => {
+                moveEnd(manPerson, key);
+            });
+            button.addEventListener('touchend', () => {
+                moveEnd(manPerson, key);
+            });
+            button.addEventListener('contextmenu', (event) => {
+                event.preventDefault();
+            });
+        }
+    });
 }
